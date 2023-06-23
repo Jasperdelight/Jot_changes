@@ -19,7 +19,7 @@ export const router = [
         <section class="row"></section>
         <section id="note-form" class="row">
         <label>Add Jot!</label>
-          <form id="myForm" action="" onsubmit= "app.NotesController.createNote()">
+          <form id="myForm" action="" onblur="app.NotesController.createNote()" onsubmit= "app.NotesController.createNote()">
           <input required name="color" type="color" name="" id="">
             <input required minlength="3" name="title" type="text">
           </form>

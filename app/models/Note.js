@@ -7,7 +7,7 @@ export class Note {
     this.color = data.color
     this.dateCreated = data.dateCreated ? new Date(data.dateCreated) : new Date()
     this.dateEdited = data.dateEdited
-    this.memo = data.memo
+    this.memo = data.memo ? data.memo : " "
   }
 
 
