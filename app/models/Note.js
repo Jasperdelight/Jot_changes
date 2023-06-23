@@ -13,13 +13,14 @@ export class Note {
 
   get savedNotesTemplate() {
     return `
-   
-          <div class="col-4 selectable" onclick="app.NotesController.setActiveNote('${this.id}')">${this.title}</div>
-          <div class="col-4"> ${this.color}
+        
+          <div class="col-12 selectable note-border elevation-4 text-center" style="border-color: ${this.color};" onclick="app.NotesController.setActiveNote('${this.id}')">${this.title}
+          <div class="">
           <button onclick="app.NotesController.deleteNote('${this.id}')" class="btn btn-danger">Delete</button>
           </div>
-          <div class="col-4">
+          <div class="">Created:
           ${this.dateFormatted}
+          </div>
           </div>
 
 
@@ -28,11 +29,11 @@ export class Note {
 
   get currentNoteTemplate() {
     return `
-    <div class="col-12 fs-4 text-center">${this.title} </div>
-    <div class= "col-12 text-center" <span>Last Edited: </span> ${this.dateCreated}</div>
+    <div class="col-12 fs-4 text-center elevation-4">${this.title} </div>
+    <div class= "col-12 text-center" <span>Last Edited: </span> ${this.dateFormattedLong}</div>
     <section class="row">
     <div class="col-12">
-    <textarea id="note-memo">${this.memo}</textarea>
+    <textarea id="note-memo" onblur="app.NotesController.saveMemo()" class="note-border" style= "border-color: ${this.color};" >${this.memo}</textarea>
     <button class="btn btn-success" onclick="app.NotesController.saveMemo()">Save</button>
     </div>
     </section>
@@ -42,6 +43,10 @@ export class Note {
   get dateFormatted() {
     let date = this.dateCreated
     return `${date.getDay()} / ${date.getMonth()} / ${date.getFullYear()}`
+  }
+
+  get dateFormattedLong() {
+    return this.dateCreated.toDateString() + " " + this.dateCreated.toLocaleTimeString()
   }
 
 }

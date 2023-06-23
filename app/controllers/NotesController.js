@@ -16,6 +16,8 @@ function _drawSavedNotes() {
 function _drawActiveNote() {
   const activeNote = AppState.activeNote
 
+
+
   setHTML('active-note', activeNote.currentNoteTemplate)
 }
 
@@ -41,6 +43,9 @@ export class NotesController {
   }
 
   setActiveNote(noteId) {
+
+
+
     // console.log('active', noteId)
     notesService.setActiveNote(noteId)
     _drawActiveNote()
