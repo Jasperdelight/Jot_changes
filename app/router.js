@@ -20,11 +20,13 @@ export const router = [
         <section id="note-form" class="row">
         <label>Add Jot!</label>
           <form class="col-12" id="myForm" action="" onsubmit= "app.NotesController.createNote()">
-          <input required name="color" type="color" name="" id="">
-            <input required minlength="3" name="title" type="text">
+          <input class="col-12" required minlength="3" maxlength="15" name="title" type="text">
+          <input class="color-form" required name="color" type="color" name="" id="">
           </form>
-          <button class="btn btn-success" type="submit" form="myForm" value="submit">Add</button>
-        </section>
+          <div class="col-12 d-flex justify-content-center">
+          <button class="btn btn-success add-button d-flex align-items-center justify-content-center" type="submit" form="myForm" value="submit">Add</button>
+          </div>
+          </section>
       </div>
       <div class="col-10">
       <section  class="row" id="active-note">

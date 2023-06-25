@@ -27,7 +27,7 @@ export class NotesController {
     // console.log('hi from controller')
     _drawSavedNotes()
 
-
+    AppState.on("activeNote", _drawActiveNote)
     AppState.on("notes", _drawSavedNotes)
 
 

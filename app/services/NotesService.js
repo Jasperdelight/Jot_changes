@@ -4,6 +4,7 @@ import { saveState } from "../utils/Store.js"
 
 function _saveState() {
   saveState('notes', AppState.notes)
+  saveState('activeNote', AppState.activeNote)
 }
 
 class NotesService {
@@ -23,6 +24,7 @@ class NotesService {
     // console.log('selected note', selectedNote)
     AppState.activeNote = selectedNote
     // console.log('active case', AppState.activeNote)
+    _saveState()
   }
 
   saveMemo(newContent) {

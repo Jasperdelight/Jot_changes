@@ -8,3 +8,18 @@ textarea {
   border-style: solid;
   border-width: .4em;
 }
+
+.note-border-secondary {
+  border-style: solid;
+  border-width: .1em;
+}
+
+.color-form {
+  height: 1rem;
+  width: 1rem;
+}
+
+.add-button {
+  width: 4rem;
+  height: 2rem;
+}

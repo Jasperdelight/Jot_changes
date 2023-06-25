@@ -14,8 +14,8 @@ export class Note {
   get savedNotesTemplate() {
     return `
         
-          <div class="col-12 selectable note-border elevation-4 text-center" style="border-color: ${this.color};" onclick="app.NotesController.setActiveNote('${this.id}')">${this.title}
-          <div class="">
+          <div class="col-12 selectable note-border-secondary elevation-4 text-center" style="border-color: ${this.color};" onclick="app.NotesController.setActiveNote('${this.id}')">${this.title}
+          <i class="mdi mdi-meditation" style="color: ${this.color};"></i><div class="">
           <button onclick="app.NotesController.deleteNote('${this.id}')" class="btn btn-danger">Delete</button>
           </div>
           <div class="">Created:
@@ -41,8 +41,7 @@ export class Note {
   }
 
   get dateFormatted() {
-    let date = this.dateCreated
-    return `${date.getDay()} / ${date.getMonth()} / ${date.getFullYear()}`
+    return this.dateCreated.toLocaleDateString()
   }
 
   get dateFormattedLong() {
